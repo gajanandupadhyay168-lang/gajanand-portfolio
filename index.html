@@ -289,13 +289,26 @@ box-shadow:0 10px 25px rgba(0,0,0,0.4);
 <footer>
     © 2026 Gajanand Upadhyay | All Rights Reserved
 </footer>
+<audio id="bgmusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
 
+<button class="btn" onclick="playMusic()">🔊 Music</button>
 <script>
 function scrollToSection(){
 function toggleMode(){
 document.body.classList.toggle("light-mode");
 }
     document.getElementById("about").scrollIntoView({behavior:"smooth"});
+}
+function playMusic(){
+let music=document.getElementById("bgmusic");
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
 }
 </script>
 <script>
