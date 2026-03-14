@@ -320,21 +320,42 @@ localStorage.setItem("visitors", count);
 document.getElementById("visitorCount").innerText = count;
 </script>
 <script>
-const text = ["Gajanand Upadhyay","CSE Student","Web Developer","Problem Solver"];
-let tcount=0,index=0,currentText="",letter="";
+const texts = ["Gajanand Upadhyay","CSE Student","Web Developer","Problem Solver"];
+let i = 0;
+let j = 0;
+let current = "";
+let isDeleting = false;
 
-(function type(){
-if(tcount===text.length){tcount=0;}
-currentText=text[tcount];
-letter=currentText.slice(0,++index);
-document.getElementById("typing").textContent=letter;
+function type(){
+current = texts[i];
 
-if(letter.length===currentText.length){
-tcount++;index=0;setTimeout(type,1000);
+if(!isDeleting){
+document.getElementById("typing").textContent = current.substring(0, j+1);
+j++;
+
+if(j === current.length){
+isDeleting = true;
+setTimeout(type,1000);
+return;
+}
+
 }else{
+document.getElementById("typing").textContent = current.substring(0, j-1);
+j--;
+
+if(j === 0){
+isDeleting = false;
+i++;
+if(i === texts.length){
+i = 0;
+}
+}
+}
+
 setTimeout(type,100);
 }
-})();
+
+type();
 </script>
 <script>
 const canvas=document.getElementById("particles");
