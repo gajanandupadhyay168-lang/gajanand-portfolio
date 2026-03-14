@@ -287,6 +287,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.4);
 </section>
 
 <footer>
+<p>👀 Visitors: <span id="visitorCount">0</span></p>
     © 2026 Gajanand Upadhyay | All Rights Reserved
 </footer>
 <audio id="bgmusic" loop>
@@ -313,6 +314,10 @@ music.pause();
 btn.innerText="🔊 Play Music";
 }
 }
+let count = localStorage.getItem("visitors") || 0;
+count++;
+localStorage.setItem("visitors", count);
+document.getElementById("visitorCount").innerText = count;
 </script>
 <script>
 const text = ["Gajanand Upadhyay","CSE Student","Web Developer","Problem Solver"];
