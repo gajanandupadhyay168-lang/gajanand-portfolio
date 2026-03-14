@@ -139,7 +139,18 @@ color:black;
     border:none;
     border-radius:5px;
 }
+.light-mode{
+background:white;
+color:black;
+}
 
+.light-mode section{
+background:#f1f5f9;
+}
+
+.light-mode .project-card{
+background:#e2e8f0;
+}
 footer{
     text-align:center;
     padding:20px;
@@ -198,6 +209,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.4);
 <img src="profile.jpg" class="profile">
     <h1>I am <span id="typing"></span></h1>
     <p>B.Tech CSE Student | Aspiring Software Developer</p>
+<button class="btn" onclick="toggleMode()">🌙 Toggle Mode</button>
     <button class="btn" onclick="scrollToSection()">Explore</button>
 <a href="resume.pdf" download>
 <button class="btn">Download Resume</button>
@@ -280,6 +292,9 @@ box-shadow:0 10px 25px rgba(0,0,0,0.4);
 
 <script>
 function scrollToSection(){
+function toggleMode(){
+document.body.classList.toggle("light-mode");
+}
     document.getElementById("about").scrollIntoView({behavior:"smooth"});
 }
 </script>
