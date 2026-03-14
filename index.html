@@ -330,7 +330,7 @@ letter=currentText.slice(0,++index);
 document.getElementById("typing").textContent=letter;
 
 if(letter.length===currentText.length){
-count++;index=0;setTimeout(type,1000);
+tcount++;index=0;setTimeout(type,1000);
 }else{
 setTimeout(type,100);
 }
