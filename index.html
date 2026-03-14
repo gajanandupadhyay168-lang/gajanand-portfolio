@@ -321,11 +321,11 @@ document.getElementById("visitorCount").innerText = count;
 </script>
 <script>
 const text = ["Gajanand Upadhyay","CSE Student","Web Developer","Problem Solver"];
-let count=0,index=0,currentText="",letter="";
+let tcount=0,index=0,currentText="",letter="";
 
 (function type(){
-if(count===text.length){count=0;}
-currentText=text[count];
+if(tcount===text.length){tcount=0;}
+currentText=text[tcount];
 letter=currentText.slice(0,++index);
 document.getElementById("typing").textContent=letter;
 
