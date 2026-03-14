@@ -303,11 +303,14 @@ document.body.classList.toggle("light-mode");
 }
 function playMusic(){
 let music=document.getElementById("bgmusic");
+let btn=document.querySelector(".btn");
 
 if(music.paused){
 music.play();
+btn.innerText="⏸ Pause Music";
 }else{
 music.pause();
+btn.innerText="🔊 Play Music";
 }
 }
 </script>
